@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Idea Box</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
   </head>
   <body>
     <!-- Left -->
@@ -11,16 +13,16 @@
         <h2 class="title">IdeaBox</h2>
       </div>
       <div class="">
-        <h3>Filter Starred Ideas</h3>
+        <h3 class="filter-text">Filter Starred Ideas</h3>
         <button class="starred-btn" type="button" name="button">Show Starred Ideas</button>
       </div>
     </section>
     <!-- Main -->
     <main>
       <form class="" action="index.html" method="post">
-        <h3>Title</h3>
+        <h3 class="title-body">Title</h3>
         <input class="title-input" type="text" name="" value="">
-        <h3>Body</h3>
+        <h3 class="title-body">Body</h3>
         <input class="body-input" type="text" name="" value="">
         <button class="save-btn" type="button" name="button">Save</button>
         <button type="button" name="button"></button>
@@ -29,18 +31,19 @@
       <!-- Cards -->
       <section class="card-container">
         <div class="idea-card">
-          <div>
+          <div class="card-top">
             <img src="" alt="Star icon button">
             <img src="" alt="Delete card button">
           </div>
-          <h2>Idea Title</h2>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          <div>
+          <h2 class="idea-title">Idea Title</h2>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+          <div class="card-bottom">
             <img src="" alt="Add comment button">
-            <p>Comment</p>
+            <p class="comment">Comment</p>
           </div>
         </div>
       </section>
     </main>
   </body>
 </html>
+<script type="text/javascript" src='main.js'></script>

@@ -1,0 +1,60 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.left-section {
+  background-color: #1f1f3d;
+}
+
+form {
+  background-color: #a9aad2;
+}
+
+.card-container {
+  background-color: #eaeaf4;
+}
+
+.title {
+  color: #ffffff;
+}
+
+.starred-btn {
+  color: #e9e9f3;
+  background-color: #5356a4;
+  border-color: #353567;
+  border-radius: 2px;
+}
+
+.idea-card {
+  border-color: #5356a4;
+}
+
+.card-top {
+  background-color: #1f1f3d;
+}
+
+.card-bottom {
+  background-color: #5356a4;
+}
+
+.idea-body {
+  color: #1f1f3d;
+}
+
+.idea-title {
+  color: #1f1f3d;
+}
+
+.comment {
+  color: #ffffff;
+}
+
+.filter-text {
+  color: #bfbfdd;
+}
+
+.title-body {
+  color: #1f1f3d;
+}
