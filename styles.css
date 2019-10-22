@@ -1,0 +1,163 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 23% 77%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.left-section {
+  background-color: #1f1f3d;
+}
+
+.title-div {
+  border-bottom: 2px solid #353567;
+}
+
+.title {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.filter-text {
+  color: #bfbfdd;
+  margin-left: 10px;
+}
+
+.star-div {
+  border-bottom: 2px solid #353567;
+  padding-bottom: 20px;
+}
+
+.starred-btn {
+  color: #e9e9f3;
+  background-color: #5356a4;
+  border-color: #353567;
+  border-radius: 2px;
+  width: 92%;
+  height: 40px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.input-container {
+  background-color: #a9aad2;
+  display: flex;
+  justify-content: center;
+}
+
+.body-input, .title-input, .save-btn, .search-div {
+  border: 2px solid #5356a4;
+  border-radius: 2px;
+}
+
+.body-input {
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.title-input {
+  height: 40px;
+}
+
+.save-btn {
+  height: 50px;
+  background-color: #343667;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.search-div {
+  display: flex;
+  margin-left: auto;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.search-btn {
+  background-image: url(./assets/search.svg);
+  background-repeat: no-repeat;
+  width: 8%;
+  background-color: #343667;
+  background-size: 30px 30px;
+  background-position: center;
+  border: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 50px;
+}
+
+input::placeholder {
+  font-size: 20px;
+  /* center at some point */
+}
+
+
+.title {
+  color: #ffffff;
+}
+
+.title-body {
+  color: #1f1f3d;
+  align-self: flex-start;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.card-container {
+  background-color: #eaeaf4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 15px;
+
+}
+
+.idea-card {
+  border: 2px solid #5356a4;
+}
+
+.card-top {
+  background-color: #1f1f3d;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-bottom {
+  background-color: #5356a4;
+  display: flex;
+  flex-direction: row;
+}
+
+.idea-body, .idea-title {
+  color: #1f1f3d;
+  padding-left: 10px;
+}
+
+.comment {
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-self: center;
+  font-weight: bold;
+}
