@@ -79,7 +79,7 @@ form {
 
 .save-btn {
   height: 50px;
-  background-color: #343667;
+  background-color: hsl(0, 0%, 38%);
   color: #ffffff;
   margin-bottom: 30px;
   font-size: 25px;
