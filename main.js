@@ -10,6 +10,9 @@ window.addEventListener('load', saveDisableToggle);
 saveBtn.addEventListener('click', appendCard);
 bodyInput.addEventListener('keyup', saveDisableToggle);
 titleInput.addEventListener('keyup', saveDisableToggle);
+cardContainer.addEventListener('click', cardEventHandler);
+
+
 
 // Function to toggle the use of the save button
 function saveDisableToggle() {
@@ -22,7 +25,7 @@ function saveDisableToggle() {
         bodyInput.value !== '') {
       saveBtn.disabled = false;
       saveBtn.style.backgroundColor = '#1f1f3d';
-      saveBtn.style.cursor = 'default';
+      saveBtn.style.cursor = 'pointer';
     }
 }
 
@@ -32,7 +35,7 @@ function appendCard() {
         <section class="idea-card">
           <div class="card-top">
             <img class="icon" src="./assets/star-active.svg" alt="Star icon button">
-            <img class="icon" src="./assets/delete.svg" alt="Delete card button">
+            <img class="icon delete-icon" type="button"  src="./assets/delete.svg" alt="Delete card button">
           </div>
           <h2 class="idea-title">${titleInput.value}</h2>
           <p class="idea-body">${bodyInput.value}</p>
@@ -44,4 +47,14 @@ function appendCard() {
 
   form.reset();
   saveDisableToggle();
+}
+
+function cardEventHandler(event) {
+  if (event.target.classList.contains("delete-icon")) {
+    deleteCard();
+  }
+}
+
+function deleteCard() {
+  event.target.closest(".idea-card").remove();
 }
