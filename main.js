@@ -1,21 +1,33 @@
-
+// Variables
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var saveBtn = document.querySelector('.save-btn');
 var cardContainer = document.querySelector('.card-container');
 var form = document.querySelector('form');
 
+// EventListeners
+window.addEventListener('load', saveDisableToggle);
 saveBtn.addEventListener('click', appendCard);
-saveBtn.addEventListener('hover', )
+bodyInput.addEventListener('keyup', saveDisableToggle);
+titleInput.addEventListener('keyup', saveDisableToggle);
 
-var ideaCards = [];
-
-
-function appendCard() {
+// Function to toggle the use of the save button
+function saveDisableToggle() {
   if (titleInput.value === '' ||
-      bodyInput.value === '') {
+        bodyInput.value === '') {
+      saveBtn.disabled = true;
+      saveBtn.style.backgroundColor = '#7a7a7a';
+      saveBtn.style.cursor = 'not-allowed';
+    } else if (titleInput.value !== '' &&
+        bodyInput.value !== '') {
+      saveBtn.disabled = false;
+      saveBtn.style.backgroundColor = '#1f1f3d';
+      saveBtn.style.cursor = 'default';
+    }
+}
 
-    } else {
+// Function to add a new idea card
+function appendCard() {
   cardContainer.innerHTML += `
         <section class="idea-card">
           <div class="card-top">
@@ -31,5 +43,5 @@ function appendCard() {
         </section>`
 
   form.reset();
-    }
+  saveDisableToggle();
 }
