@@ -34,7 +34,7 @@ function appendCard() {
   cardContainer.innerHTML += `
         <section class="idea-card">
           <div class="card-top">
-            <img class="icon" src="./assets/star-active.svg" alt="Star icon button">
+            <button class="icon star-icon" type="button"></button>
             <img class="icon delete-icon" type="button"  src="./assets/delete.svg" alt="Delete card button">
           </div>
           <h2 class="idea-title">${titleInput.value}</h2>
@@ -53,8 +53,15 @@ function cardEventHandler(event) {
   if (event.target.classList.contains("delete-icon")) {
     deleteCard();
   }
+  if (event.target.classList.contains("star-icon")) {
+    toggleFav();
+  }
 }
 
 function deleteCard() {
   event.target.closest(".idea-card").remove();
+}
+
+function toggleFav () {
+  event.target.closest(".star-icon").classList.toggle("star-icon-active");
 }
