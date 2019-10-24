@@ -172,6 +172,22 @@ input::placeholder {
   font-weight: bold;
 }
 
+.star-icon {
+  background-image: url(./assets/star.svg);
+  background-repeat: no-repeat;
+  width: 10%;
+  background-color: #1f1f3d;
+  background-size: 30px 30px;
+  background-position: center;
+  border: none;
+  padding-left: 25px;
+  outline: none;
+}
+
+.star-icon-active {
+  background-image: url(./assets/star-active.svg);
+}
+
 /* media queries */
 
 @media screen and (max-width: 500px) {
