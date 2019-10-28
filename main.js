@@ -4,15 +4,17 @@ var bodyInput = document.querySelector('.body-input');
 var saveBtn = document.querySelector('.save-btn');
 var cardContainer = document.querySelector('.card-container');
 var form = document.querySelector('form');
+var cardsArray = JSON.parse(localStorage.getItem("cardsArray")) || [];
+// var cardsArray = [];
 
 // EventListeners
 window.addEventListener('load', saveDisableToggle);
-saveBtn.addEventListener('click', appendCard);
+saveBtn.addEventListener('click', addIdea);
 bodyInput.addEventListener('keyup', saveDisableToggle);
 titleInput.addEventListener('keyup', saveDisableToggle);
 cardContainer.addEventListener('click', cardEventHandler);
 
-
+reinstantiateArray()
 
 // Function to toggle the use of the save button
 function saveDisableToggle() {
@@ -30,15 +32,15 @@ function saveDisableToggle() {
 }
 
 // Function to add a new idea card
-function appendCard() {
+function appendCard(idea) {
   cardContainer.innerHTML += `
-        <section class="idea-card">
+        <section class="idea-card" data-name=${idea.id}>
           <div class="card-top">
             <button class="icon star-icon" type="button"></button>
             <img class="icon delete-icon" type="button"  src="./assets/delete.svg" alt="Delete card button">
           </div>
-          <h2 class="idea-title">${titleInput.value}</h2>
-          <p class="idea-body">${bodyInput.value}</p>
+          <h2 class="idea-title">${idea.title}</h2>
+          <p class="idea-body">${idea.body}</p>
           <div class="card-bottom">
             <img class="icon" src="./assets/comment.svg" alt="Add comment button">
             <p class="comment">Comment</p>
@@ -60,8 +62,38 @@ function cardEventHandler(event) {
 
 function deleteCard() {
   event.target.closest(".idea-card").remove();
+  
 }
+
+// function findId(event) {
+//   return parseInt(;
+//   console.log("hi");
+// }
 
 function toggleFav () {
   event.target.closest(".star-icon").classList.toggle("star-icon-active");
+}
+
+function addIdea() {
+  var idea = new Idea( {
+    id: Date.now(),
+    title: titleInput.value,
+    body: bodyInput.value,
+    star: false
+  });
+  cardsArray.push(idea);
+  appendCard(idea);
+  idea.saveToStorage(cardsArray);
+}
+
+function reinstantiateArray() {
+  for (var i = 0; i < cardsArray.length; i++) {
+    var idea = new Idea({
+      id: cardsArray[i].id,
+      title: cardsArray[i].title,
+      body: cardsArray[i].body,
+      star: cardsArray[i].star,
+    });
+    appendCard(idea);
+  }
 }
