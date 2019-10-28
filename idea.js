@@ -1,12 +1,15 @@
-// class Idea {
-//   constructor(obj) {
-//     this.id = obj.id || Date();
-//     this.title = obj.title;
-//     this.body = obj.body;
-//     this.star = false;
-//
-//   }
-//
-// }
-//
+class Idea {
+  constructor(idea) {
+    this.id = idea.id || Date();
+    this.title = idea.title;
+    this.body = idea.body;
+    this.star = false;
+
+  }
+  saveToStorage(Idea) {
+    var stringifiedObj = JSON.stringify(Idea);
+    localStorage.setItem("cardsArray", stringifiedObj );
+  }
+}
+
 // module.exports = Idea;
