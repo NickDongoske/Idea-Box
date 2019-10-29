@@ -5,7 +5,6 @@ var saveBtn = document.querySelector('.save-btn');
 var cardContainer = document.querySelector('.card-container');
 var form = document.querySelector('form');
 var cardsArray = JSON.parse(localStorage.getItem("cardsArray")) || [];
-// var cardsArray = [];
 
 // EventListeners
 window.addEventListener('load', saveDisableToggle);
@@ -17,7 +16,6 @@ cardContainer.addEventListener('click', cardEventHandler);
 reinstantiateArray()
 
 // Function to toggle the use of the save button
-
 function saveDisableToggle() {
   if (titleInput.value &&
       bodyInput.value) {
@@ -52,42 +50,6 @@ function appendCard(idea) {
   saveDisableToggle();
 }
 
-function cardEventHandler(event) {
-  if (event.target.classList.contains("delete-icon")) {
-    deleteCard();
-  }
-  if (event.target.classList.contains("star-icon")) {
-    toggleFav();
-  }
-}
-
-function deleteCard() {
-  event.target.closest(".idea-card").remove();
-  var index = findIndex(event)
-  if (cardsArray[index].id = event.target.closest(".idea-card").dataset.name) {
-    cardsArray.splice(index, 1);
-    localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
-    }
-}
-
-function findId(event) {
-  return parseInt(event.target.closest(".idea-card").dataset.name);
-}
-
-function findIndex(event) {
-     var id = findId(event);
-     for (var i = 0; i < cardsArray.length; i++) {
-       if (id === cardsArray[i].id) {
-         return parseInt(i);
-       }
-     }
-   }
-
-function toggleFav (event) {
-  event.target.closest(".star-icon").classList.toggle("star-icon-active");
-
-}
-
 function addIdea() {
   var idea = new Idea( {
     id: Date.now(),
@@ -111,3 +73,40 @@ function reinstantiateArray() {
     appendCard(idea);
   }
 }
+
+function cardEventHandler(event) {
+  if (event.target.classList.contains("delete-icon")) {
+    deleteCard();
+  }
+  if (event.target.classList.contains("star-icon")) {
+    toggleFav();
+  }
+}
+
+// Function to delete card
+function deleteCard() {
+  event.target.closest(".idea-card").remove();
+  var index = findIndex(event)
+  if (cardsArray[index].id = event.target.closest(".idea-card").dataset.name) {
+    cardsArray.splice(index, 1);
+    localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
+    }
+}
+
+// Function to toggle starred
+function toggleFav (event) {
+  event.target.closest(".star-icon").classList.toggle("star-icon-active");
+}
+
+function findId(event) {
+  return parseInt(event.target.closest(".idea-card").dataset.name);
+}
+
+function findIndex(event) {
+     var id = findId(event);
+     for (var i = 0; i < cardsArray.length; i++) {
+       if (id === cardsArray[i].id) {
+         return parseInt(i);
+       }
+     }
+   }
