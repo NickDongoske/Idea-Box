@@ -17,17 +17,18 @@ cardContainer.addEventListener('click', cardEventHandler);
 reinstantiateArray()
 
 // Function to toggle the use of the save button
+
 function saveDisableToggle() {
-  if (titleInput.value === '' ||
-        bodyInput.value === '') {
-      saveBtn.disabled = true;
-      saveBtn.style.backgroundColor = '#7a7a7a';
-      saveBtn.style.cursor = 'not-allowed';
-    } else if (titleInput.value !== '' &&
-        bodyInput.value !== '') {
-      saveBtn.disabled = false;
-      saveBtn.style.backgroundColor = '#1f1f3d';
-      saveBtn.style.cursor = 'pointer';
+  if (titleInput.value &&
+      bodyInput.value) {
+    saveBtn.disabled = false;
+    saveBtn.style.backgroundColor = '#1f1f3d';
+    saveBtn.style.cursor = 'pointer';
+  }
+  else {
+    saveBtn.disabled = true;
+    saveBtn.style.backgroundColor = '#7a7a7a';
+    saveBtn.style.cursor = 'not-allowed';
     }
 }
 
