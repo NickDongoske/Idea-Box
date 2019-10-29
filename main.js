@@ -36,7 +36,7 @@ function appendCard(idea) {
   cardContainer.innerHTML += `
         <section class="idea-card" data-name=${idea.id}>
           <div class="card-top">
-            <button class="icon star-icon" type="button"></button>
+            <input type="image" src="assets/star.svg" class="icon star-icon" type="button"></button>
             <img class="icon delete-icon" type="button"  src="./assets/delete.svg" alt="Delete card button">
           </div>
           <h2 class="idea-title">${idea.title}</h2>
@@ -62,16 +62,29 @@ function cardEventHandler(event) {
 
 function deleteCard() {
   event.target.closest(".idea-card").remove();
-  
+  var index = findIndex(event)
+  if (cardsArray[index].id = event.target.closest(".idea-card").dataset.name) {
+    cardsArray.splice(index, 1);
+    localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
+    }
 }
 
-// function findId(event) {
-//   return parseInt(;
-//   console.log("hi");
-// }
+function findId(event) {
+  return parseInt(event.target.closest(".idea-card").dataset.name);
+}
 
-function toggleFav () {
+function findIndex(event) {
+     var id = findId(event);
+     for (var i = 0; i < cardsArray.length; i++) {
+       if (id === cardsArray[i].id) {
+         return parseInt(i);
+       }
+     }
+   }
+
+function toggleFav (event) {
   event.target.closest(".star-icon").classList.toggle("star-icon-active");
+
 }
 
 function addIdea() {
