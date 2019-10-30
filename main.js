@@ -13,7 +13,7 @@ bodyInput.addEventListener('keyup', saveDisableToggle);
 titleInput.addEventListener('keyup', saveDisableToggle);
 cardContainer.addEventListener('click', cardEventHandler);
 
-reinstantiateArray()
+reinstantiateArray();
 
 // Function to toggle the use of the save button
 function saveDisableToggle() {
@@ -96,16 +96,12 @@ function deleteCard() {
 }
 
 // Function to toggle starred
-function toggleFav() {
-  var index = findIndex(event);
-  var star = document.querySelector('.star-icon');
-    if (cardsArray[index].id !=-1) {
-      cardsArray[index].star = !cardsArray[index].star;
-      event.target.closest(".star-icon").classList.toggle("star-icon-active");
-    }
-    localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
-   }
-
+function toggleFav () {
+  var specificCardTruthy = event.target.closest(".star-icon").classList.toggle("star-icon-active");
+  index = findIndex(event);
+  cardsArray[index].star = specificCardTruthy;
+  localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
+}
 
 function findId(event) {
   return parseInt(event.target.closest(".idea-card").dataset.name);
