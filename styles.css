@@ -63,6 +63,12 @@ form {
   width: 50%;
 }
 
+label {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 18px 0px 18px 0px;
+}
+
 .input-container {
   background-color: #a9aad2;
   display: flex;
