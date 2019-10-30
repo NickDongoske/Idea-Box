@@ -18,6 +18,8 @@
   * Users are then able to favorite and delete ideas as they wish from the collection.
   
 ### The Comp Recreation:
+ #### Original Comp: ![image](https://user-images.githubusercontent.com/19761687/67905930-a5358800-fb38-11e9-931d-f237164883dd.png)
+ #### Our Recreation: 
   <img width="1440" alt="Screen Shot 2019-10-30 at 4 24 51 PM" src="https://user-images.githubusercontent.com/19761687/67905334-9f3ea780-fb36-11e9-8cb8-dc769691a35a.png">
   <img width="1440" alt="Screen Shot 2019-10-30 at 4 25 50 PM" src="https://user-images.githubusercontent.com/19761687/67905337-a06fd480-fb36-11e9-85e2-a4f645b939ea.png">
   <img width="1440" alt="Screen Shot 2019-10-30 at 4 26 43 PM" src="https://user-images.githubusercontent.com/19761687/67905342-a2399800-fb36-11e9-8664-847905e44704.png">
