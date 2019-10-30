@@ -1,6 +1,6 @@
 // Variables
-var titleInput = document.querySelector('.title-input');
-var bodyInput = document.querySelector('.body-input');
+var titleInput = document.querySelector('#input-title');
+var bodyInput = document.querySelector('#input-body');
 var saveBtn = document.querySelector('.save-btn');
 var cardContainer = document.querySelector('.card-container');
 var form = document.querySelector('form');
