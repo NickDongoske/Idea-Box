@@ -45,7 +45,6 @@ function appendCard(idea) {
             <p class="comment">Comment</p>
           </div>
         </section>`
-
   form.reset();
   saveDisableToggle();
 }
@@ -71,6 +70,9 @@ function reinstantiateArray() {
       star: cardsArray[i].star,
     });
     appendCard(idea);
+    if(cardsArray[i].star === true) {
+      document.querySelector(`[data-name="${cardsArray[i].id}"]`).firstElementChild.firstElementChild.classList.add("star-icon-active");
+    }
   }
 }
 
@@ -94,18 +96,6 @@ function deleteCard() {
 }
 
 // Function to toggle starred
-
-// function toggleFav () {
-//   var index = findIndex(event);
-//   if (cardsArray[index].id = event.target.closest(".idea-card").dataset.name) {
-//     event.target.closest(".star-icon").classList.toggle("star-icon-active");
-//     cardsArray[index].star = !cardsArray[index].star
-    // localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
-//   } else {
-//     console.log('false')
-//   }
-// }
-
 function toggleFav() {
   var index = findIndex(event);
   var star = document.querySelector('.star-icon');
