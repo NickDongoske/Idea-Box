@@ -35,7 +35,7 @@ function appendCard(idea) {
   cardContainer.innerHTML += `
         <section class="idea-card" data-name=${idea.id}>
           <div class="card-top">
-            <input type="image" src="assets/star.svg" class="icon star-icon" type="button"></button>
+            <button class="icon star-icon" type="button"></button>
             <img class="icon delete-icon" type="button"  src="./assets/delete.svg" alt="Delete card button">
           </div>
           <h2 class="idea-title">${idea.title}</h2>
@@ -94,9 +94,28 @@ function deleteCard() {
 }
 
 // Function to toggle starred
-function toggleFav (event) {
-  event.target.closest(".star-icon").classList.toggle("star-icon-active");
-}
+
+// function toggleFav () {
+//   var index = findIndex(event);
+//   if (cardsArray[index].id = event.target.closest(".idea-card").dataset.name) {
+//     event.target.closest(".star-icon").classList.toggle("star-icon-active");
+//     cardsArray[index].star = !cardsArray[index].star
+    // localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
+//   } else {
+//     console.log('false')
+//   }
+// }
+
+function toggleFav() {
+  var index = findIndex(event);
+  var star = document.querySelector('.star-icon');
+    if (cardsArray[index].id !=-1) {
+      cardsArray[index].star = !cardsArray[index].star;
+      event.target.closest(".star-icon").classList.toggle("star-icon-active");
+    }
+    localStorage.setItem('cardsArray', JSON.stringify(cardsArray));
+   }
+
 
 function findId(event) {
   return parseInt(event.target.closest(".idea-card").dataset.name);
