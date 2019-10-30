@@ -159,6 +159,10 @@ input::placeholder {
   justify-content: space-between;
 }
 
+.icon, .search-btn {
+  cursor: pointer;
+}
+
 .card-bottom {
   background-color: #5356a4;
   display: flex;
