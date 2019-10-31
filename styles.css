@@ -1,5 +1,4 @@
 /* Full page CSS elements */
-
 *,
 *:after,
 *:before {
@@ -12,11 +11,9 @@ body {
   grid-template-columns: 23% 77%;
   margin: 0;
   padding: 0;
-  
 }
 
 /* Left section CSS elements */
-
 .left-section {
   background-color: #1f1f3d;
 }
@@ -32,7 +29,6 @@ body {
 .title {
   font-weight: bold;
   margin-left: 10px;
-  
 }
 
 .filter-text {
@@ -55,12 +51,9 @@ body {
   height: 40px;
   margin-left: 10px;
   width: 92%;
-  
-  
 }
 
 /* Main section CSS elements */
-
 form {
   display: flex;
   flex-direction: column;
@@ -135,11 +128,9 @@ input::placeholder {
 .title-body {
   align-self: flex-start;
   color: #1f1f3d;
-  
 }
 
 /* Idea card CSS elements */
-
 .card-container {
   background-color: #eaeaf4;
   display: grid;
@@ -182,7 +173,7 @@ input::placeholder {
   align-self: center;
   color: #ffffff;
   display: flex;
-  margin: 0;  
+  margin: 0;
   font-weight: bold;
 }
 
@@ -203,7 +194,6 @@ input::placeholder {
 }
 
 /* media queries */
-
 @media screen and (max-width: 973px) {
   .starred-btn {
     font-size: 14px;
@@ -211,7 +201,6 @@ input::placeholder {
 }
 
 @media screen and (max-width: 800px) {
-
   body {
     display: flex;
     flex-flow: column nowrap;
@@ -220,6 +209,10 @@ input::placeholder {
 
   form {
     width: 80%;
+  }
+
+  .starred-btn {
+    margin-bottom: 20px;
   }
 
   .search-btn {
@@ -237,6 +230,7 @@ input::placeholder {
 
   .star-div {
     display: none;
+    border-bottom: 0;
   }
 
   .title-div {
@@ -265,10 +259,20 @@ input::placeholder {
     margin: 20px;
   }
 
+  .opacity {
+    opacity: 0.4;
+  }
+
+  .toggleX {
+    background-image: url(./assets/menu-close.svg);
+  }
+
+  .display-initial {
+    display: initial;
+  }
 }
 
 @media screen and (max-width: 500px) {
-
   form {
     width: 93%;
   }
